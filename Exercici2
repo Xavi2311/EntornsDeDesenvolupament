@@ -48,6 +48,7 @@ public class SearchforVampireThinkinginJava {
 				productTest(i, com(c(i), b(i)), com(d(i), a(i)));
 			}	
 			 System.out.println ("El número total de llamadas a juzgar es:" + suma); // TMJG agrega esta línea y comenta
+			 System.out.println ("Hola sóc en Dante Abad");
 		} 
 }
 --------------------- 
