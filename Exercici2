@@ -1,0 +1,54 @@
+public class SearchforVampireThinkinginJava {
+ 
+	// control/VampireNumbers.java
+	// TIJ4 Chapter Control, Exercise 10, page 154 a
+	/* A vampire number has an even number of digits and is formed by multiplying a
+	* pair of numbers containing half the number of digits of the result. The
+	* digits are taken from the original number in any order. Pairs of trailing
+	* zeroes are not allowed. Examples include: 1260 = 21 * 60, 1827 = 21 * 87,
+	* 2187 = 27  * 81. Write a program that finds all the 4-digit vampire numbers.
+	* (Suggested by Dan Forhan.)
+	*/ 
+// Este método es progresivo, es decir, primero hay cuatro dígitos, y luego se dividen, y los cuatro dígitos se combinan y multiplican. Si el producto es igual al número original, se genera y se calcula como un número de vampiro. TMJG agrega esta línea y comenta
+ // De hecho, el resultado de la suma es 107976 veces, lo cual es muy grande, la eficiencia del algoritmo es muy baja y hay repeticiones (6880 = 86 * 80, 6880 = 80 * 86). TMJG agrega esta línea y comenta
+	
+			 static int sum = 0; // Registre el número de juicios de llamada, TMJG agregue esta línea y comente
+			static int a(int i) {
+				 devuelva i / 1000; // busque miles de dígitos, lo mismo a continuación, TMJG agregue esta línea y comente
+			}
+			static int b(int i) {
+				return (i%1000)/100;
+			}
+			static int c(int i) {
+				return ((i%1000)%100)/10;
+			}
+			static int d(int i) {
+				return ((i%1000)%100)%10;
+			}
+			 static int com (int i, int j) {// Forma un doble dígito de 10 ~ 99, TMJG agrega esta línea y comenta
+				return (i * 10) + j;
+			}
+			static void productTest (int i, int m, int n) {
+				sum++;
+				if(m * n == i) System.out.println(i + " = " + m + " * " + n);
+			}	
+		public static void main(String[] args) {		
+			for(int i = 1001; i < 9999; i++) {			
+				productTest(i, com(a(i), b(i)), com(c(i), d(i)));
+				productTest(i, com(a(i), b(i)), com(d(i), c(i)));
+				productTest(i, com(a(i), c(i)), com(b(i), d(i)));
+				productTest(i, com(a(i), c(i)), com(d(i), b(i)));
+				productTest(i, com(a(i), d(i)), com(b(i), c(i)));
+				productTest(i, com(a(i), d(i)), com(c(i), b(i)));
+				productTest(i, com(b(i), a(i)), com(c(i), d(i)));
+				productTest(i, com(b(i), a(i)), com(d(i), c(i)));
+				productTest(i, com(b(i), c(i)), com(d(i), a(i)));
+				productTest(i, com(b(i), d(i)), com(c(i), a(i)));
+				productTest(i, com(c(i), a(i)), com(d(i), b(i)));
+				productTest(i, com(c(i), b(i)), com(d(i), a(i)));
+			}	
+			 System.out.println ("El número total de llamadas a juzgar es:" + suma); // TMJG agrega esta línea y comenta
+			 System.out.println ("Hola sóc en Dante Abad");
+		} 
+}
+--------------------- 
