@@ -5,7 +5,7 @@ public class Exercici1 {
 
     public CuadroMagico() {
     }
-asdfg
+asdfghdffffffffffffffffffffffffffffffffffffffffffffffffffffff
     public CuadroMagico(int n) {
         this.n = n;
         this.cuadro = new int[n][n];
